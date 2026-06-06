@@ -4,265 +4,382 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Datenschutzerklärung – Zementa Weather</title>
+  <meta name="description" content="Datenschutzerklärung der Zementa Weather Android App von QW_ellCODe.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
   <style>
-    :root, [data-theme="light"] {
-      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-border: #d4d1ca;
-      --color-text: #28251d; --color-text-muted: #7a7974; --color-text-faint: #bab9b4;
-      --color-primary: #01696f; --color-primary-hover: #0c4e54;
-      --color-divider: #dcd9d5;
-      --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06);
-      --shadow-md: 0 4px 12px oklch(0.2 0.01 80 / 0.08);
-      --radius-md: 0.5rem; --radius-lg: 0.75rem;
-      --font-body: 'Inter', sans-serif;
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
-      --space-6: 1.5rem; --space-8: 2rem; --space-12: 3rem;
-      --space-16: 4rem; --space-20: 5rem;
-      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    /* ── TOKENS ─────────────────────────────────────── */
+    :root {
+      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
+      --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+      --space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
+      --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-full:9999px;
+      --transition-interactive:180ms cubic-bezier(0.16,1,0.3,1);
+      --font-display:'Instrument Serif',Georgia,serif;
+      --font-body:'DM Sans','Helvetica Neue',sans-serif;
+      --content-narrow:680px;--content-default:960px;
     }
-    [data-theme="dark"] {
-      --color-bg: #171614; --color-surface: #1c1b19; --color-border: #393836;
-      --color-text: #cdccca; --color-text-muted: #797876; --color-text-faint: #5a5957;
-      --color-primary: #4f98a3; --color-primary-hover: #227f8b;
-      --color-divider: #262523;
-      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
-      --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
+    :root,[data-theme="light"]{
+      --color-bg:#f4f6f8;--color-surface:#f8f9fb;--color-surface-2:#ffffff;
+      --color-surface-offset:#eceff3;--color-divider:#dce1e8;--color-border:#cdd3db;
+      --color-text:#1a2535;--color-text-muted:#5a6a80;--color-text-faint:#a8b4c0;
+      --color-text-inverse:#f4f6f8;
+      --color-primary:#2563eb;--color-primary-hover:#1d4ed8;
+      --color-primary-highlight:#dbeafe;
+      --shadow-sm:0 1px 2px oklch(0.2 0.02 240 / 0.07);
+      --shadow-md:0 4px 16px oklch(0.2 0.02 240 / 0.10);
+      --shadow-lg:0 12px 40px oklch(0.2 0.02 240 / 0.14);
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-    body { font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background: var(--color-bg); line-height: 1.7; min-height: 100dvh; }
-    a { color: var(--color-primary); text-decoration: none; transition: color var(--transition); }
-    a:hover { color: var(--color-primary-hover); }
-    p, li { max-width: 72ch; }
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: color-mix(in oklch, var(--color-bg) 85%, transparent);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--color-divider);
-      padding: var(--space-3) var(--space-6);
-      display: flex; align-items: center; justify-content: space-between;
+    [data-theme="dark"]{
+      --color-bg:#0d1117;--color-surface:#161b22;--color-surface-2:#1c2330;
+      --color-surface-offset:#0d1117;--color-divider:#21262d;--color-border:#30363d;
+      --color-text:#e6edf3;--color-text-muted:#8b949e;--color-text-faint:#484f58;
+      --color-text-inverse:#0d1117;
+      --color-primary:#58a6ff;--color-primary-hover:#79b8ff;
+      --color-primary-highlight:#1f3a5f;
+      --shadow-sm:0 1px 2px oklch(0 0 0 / 0.30);
+      --shadow-md:0 4px 16px oklch(0 0 0 / 0.45);
+      --shadow-lg:0 12px 40px oklch(0 0 0 / 0.55);
     }
-    .nav-logo { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); font-weight: 600; color: var(--color-text); text-decoration: none; }
-    .nav-logo svg { color: var(--color-primary); }
-    .nav-actions { display: flex; align-items: center; gap: var(--space-3); }
-    .nav-back { font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: all var(--transition); }
-    .nav-back:hover { color: var(--color-text); border-color: var(--color-primary); }
-    .lang-btn { font-size: var(--text-xs); color: var(--color-text-muted); padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: all var(--transition); }
-    .lang-btn:hover { color: var(--color-text); border-color: var(--color-primary); }
-    .theme-btn { width: 36px; height: 36px; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: transparent; cursor: pointer; color: var(--color-text-muted); display: flex; align-items: center; justify-content: center; transition: all var(--transition); }
-    .theme-btn:hover { color: var(--color-text); border-color: var(--color-primary); }
-    .page-wrapper { max-width: 800px; margin: 0 auto; padding: var(--space-12) var(--space-6) var(--space-20); }
-    .page-header { margin-bottom: var(--space-12); }
-    .badge { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-xs); font-weight: 500; color: var(--color-primary); background: color-mix(in oklch, var(--color-primary) 10%, var(--color-bg)); padding: 4px 10px; border-radius: 9999px; margin-bottom: var(--space-4); }
-    h1 { font-size: var(--text-xl); font-weight: 700; color: var(--color-text); line-height: 1.2; margin-bottom: var(--space-3); }
-    .meta { font-size: var(--text-sm); color: var(--color-text-muted); }
-    .toc-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-8); box-shadow: var(--shadow-sm); }
-    .toc-title { font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-3); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
-    .toc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
-    .toc-list li a { font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: center; gap: 6px; }
-    .toc-list li a::before { content: "§"; color: var(--color-primary); font-weight: 700; }
-    .toc-list li a:hover { color: var(--color-primary); }
-    section { margin-bottom: var(--space-12); scroll-margin-top: 80px; }
-    section h2 { font-size: var(--text-lg); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-divider); display: flex; align-items: center; gap: var(--space-3); }
-    .section-num { width: 24px; height: 24px; border-radius: 50%; background: color-mix(in oklch, var(--color-primary) 12%, var(--color-bg)); color: var(--color-primary); font-size: var(--text-xs); font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    section p { margin-bottom: var(--space-4); color: var(--color-text); }
-    section ul, section ol { margin: var(--space-2) 0 var(--space-4) var(--space-6); }
-    section li { margin-bottom: var(--space-2); }
-    .info-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm); }
-    .info-table th, .info-table td { text-align: left; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-divider); }
-    .info-table th { color: var(--color-text-muted); font-weight: 500; background: var(--color-surface); }
-    .info-table td { color: var(--color-text); }
-    .info-table tr:last-child td { border-bottom: none; }
-    .highlight-box { background: color-mix(in oklch, var(--color-primary) 6%, var(--color-surface)); border: 1px solid color-mix(in oklch, var(--color-primary) 20%, var(--color-border)); border-radius: var(--radius-md); padding: var(--space-4) var(--space-6); margin: var(--space-4) 0; font-size: var(--text-sm); }
-    .highlight-box.green { background: color-mix(in oklch, #437a22 8%, var(--color-surface)); border-color: color-mix(in oklch, #437a22 25%, var(--color-border)); }
-    .highlight-box.green strong { color: #437a22; }
-    [data-theme="dark"] .highlight-box.green strong { color: #6daa45; }
-    footer { text-align: center; padding: var(--space-8); border-top: 1px solid var(--color-divider); color: var(--color-text-faint); font-size: var(--text-xs); }
-    footer a { color: var(--color-text-muted); }
-    footer a:hover { color: var(--color-primary); }
-    .footer-links { display: flex; justify-content: center; gap: var(--space-6); flex-wrap: wrap; margin-bottom: var(--space-3); }
-    @media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } .page-wrapper { padding: var(--space-8) var(--space-4) var(--space-16); } }
-    .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0; }
+    @media(prefers-color-scheme:dark){:root:not([data-theme]){
+      --color-bg:#0d1117;--color-surface:#161b22;--color-surface-2:#1c2330;
+      --color-surface-offset:#0d1117;--color-divider:#21262d;--color-border:#30363d;
+      --color-text:#e6edf3;--color-text-muted:#8b949e;--color-text-faint:#484f58;
+      --color-text-inverse:#0d1117;
+      --color-primary:#58a6ff;--color-primary-hover:#79b8ff;
+      --color-primary-highlight:#1f3a5f;
+      --shadow-sm:0 1px 2px oklch(0 0 0 / 0.30);
+      --shadow-md:0 4px 16px oklch(0 0 0 / 0.45);
+      --shadow-lg:0 12px 40px oklch(0 0 0 / 0.55);
+    }}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;scroll-behavior:smooth;scroll-padding-top:var(--space-16)}
+    body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);
+      font-size:var(--text-base);color:var(--color-text);background:var(--color-bg)}
+    img,svg{display:block;max-width:100%;height:auto}
+    input,button,textarea,select{font:inherit;color:inherit}
+    h1,h2,h3,h4{text-wrap:balance;line-height:1.15}
+    p,li{text-wrap:pretty;max-width:68ch}
+    button{cursor:pointer;background:none;border:none}
+    a,button,[role="button"]{transition:color var(--transition-interactive),
+      background var(--transition-interactive),border-color var(--transition-interactive),
+      box-shadow var(--transition-interactive)}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+
+    /* ── LAYOUT ─────────────────────────────────────── */
+    .container{max-width:var(--content-default);margin-inline:auto;
+      padding-inline:clamp(var(--space-4),4vw,var(--space-12))}
+
+    /* ── NAV ─────────────────────────────────────────── */
+    .nav{position:sticky;top:0;z-index:100;background:oklch(from var(--color-bg) l c h / 0.85);
+      backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--color-divider)}
+    .nav__inner{display:flex;align-items:center;justify-content:space-between;height:56px;gap:var(--space-4)}
+    .nav__logo{display:flex;align-items:center;gap:var(--space-2);text-decoration:none;
+      color:var(--color-text);font-weight:600;font-size:var(--text-sm);letter-spacing:-0.01em}
+    .nav__logo svg{flex-shrink:0}
+    .nav__actions{display:flex;align-items:center;gap:var(--space-2)}
+    .btn-icon{display:flex;align-items:center;justify-content:center;width:36px;height:36px;
+      border-radius:var(--radius-md);color:var(--color-text-muted);background:transparent;border:none}
+    .btn-icon:hover{background:var(--color-surface-offset);color:var(--color-text)}
+    .btn{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-2) var(--space-5);
+      border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:500;text-decoration:none;border:none;white-space:nowrap}
+    .btn--primary{background:var(--color-primary);color:#fff}
+    .btn--primary:hover{background:var(--color-primary-hover)}
+    .btn--ghost{border:1px solid var(--color-border);color:var(--color-text-muted)}
+    .btn--ghost:hover{border-color:var(--color-text-muted);color:var(--color-text)}
+
+    /* ── PAGE HEADER ─────────────────────────────────── */
+    .page-header{padding-block:clamp(var(--space-12),7vw,var(--space-20));
+      border-bottom:1px solid var(--color-divider);position:relative;overflow:hidden}
+    .page-header::before{content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 60% 80% at 80% 50%, oklch(from var(--color-primary) l c h / 0.05) 0%, transparent 70%);
+      pointer-events:none}
+    .page-header__eyebrow{display:inline-flex;align-items:center;gap:var(--space-2);
+      font-size:var(--text-xs);font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--color-primary);margin-bottom:var(--space-4)}
+    .page-header__eyebrow span{display:inline-block;width:6px;height:6px;
+      border-radius:var(--radius-full);background:currentColor}
+    .page-header__title{font-family:var(--font-display);font-size:var(--text-2xl);
+      font-weight:400;letter-spacing:-0.02em;color:var(--color-text);margin-bottom:var(--space-4)}
+    .page-header__meta{font-size:var(--text-xs);color:var(--color-text-faint)}
+    .page-header__badge{display:inline-flex;align-items:center;gap:var(--space-2);
+      margin-top:var(--space-5);padding:var(--space-3) var(--space-5);
+      background:var(--color-primary-highlight);border:1px solid oklch(from var(--color-primary) l c h / 0.2);
+      border-radius:var(--radius-full);font-size:var(--text-sm);color:var(--color-primary);font-weight:500}
+    .page-header__badge svg{flex-shrink:0}
+
+    /* ── CONTENT ─────────────────────────────────────── */
+    .content{padding-block:clamp(var(--space-12),6vw,var(--space-20))}
+    .content__inner{max-width:var(--content-narrow);margin-inline:auto}
+
+    .prose{display:flex;flex-direction:column;gap:var(--space-10)}
+    .prose-section{display:flex;flex-direction:column;gap:var(--space-4)}
+    .prose-section h2{font-family:var(--font-display);font-size:var(--text-lg);
+      font-weight:400;color:var(--color-text);padding-bottom:var(--space-3);
+      border-bottom:1px solid var(--color-divider);letter-spacing:-0.01em}
+    .prose-section p{font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75}
+    .prose-section p strong{color:var(--color-text);font-weight:600}
+    .prose-section ul{display:flex;flex-direction:column;gap:var(--space-2);
+      padding-left:var(--space-6)}
+    .prose-section ul li{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.65}
+    .prose-section ul li strong{color:var(--color-text);font-weight:600}
+    .prose-section a{color:var(--color-primary);text-decoration:none}
+    .prose-section a:hover{text-decoration:underline}
+
+    /* Table */
+    .data-table{width:100%;border-collapse:collapse;margin-top:var(--space-2);font-size:var(--text-sm)}
+    .data-table th{text-align:left;padding:var(--space-3) var(--space-4);
+      font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+      color:var(--color-text-faint);background:var(--color-surface-offset);
+      border-bottom:1px solid var(--color-divider)}
+    .data-table td{padding:var(--space-3) var(--space-4);color:var(--color-text-muted);
+      border-bottom:1px solid var(--color-divider);vertical-align:top;line-height:1.55}
+    .data-table td strong{color:var(--color-text);font-weight:500}
+    .data-table tr:last-child td{border-bottom:none}
+    .data-table tr:hover td{background:var(--color-surface-offset)}
+    .table-wrap{border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden}
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    .footer{padding-block:var(--space-12);border-top:1px solid var(--color-divider)}
+    .footer__inner{display:flex;justify-content:space-between;align-items:center;
+      flex-wrap:wrap;gap:var(--space-4)}
+    .footer__brand{display:flex;align-items:center;gap:var(--space-2);
+      font-size:var(--text-sm);font-weight:600;color:var(--color-text)}
+    .footer__links{display:flex;gap:var(--space-6)}
+    .footer__links a{font-size:var(--text-xs);color:var(--color-text-muted);text-decoration:none}
+    .footer__links a:hover{color:var(--color-text)}
+    .footer__copy{font-size:var(--text-xs);color:var(--color-text-faint);width:100%;margin-top:var(--space-2)}
   </style>
 </head>
 <body>
 <a href="#main-content" class="sr-only">Zum Hauptinhalt springen</a>
-<nav>
-  <a href="index.html" class="nav-logo" aria-label="Zementa Weather – Startseite">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-    </svg>
-    Zementa Weather
-  </a>
-  <div class="nav-actions">
-    <a href="privacy.html" class="lang-btn" title="Switch to English">🇬🇧 EN</a>
-    <a href="index.html" class="nav-back">← Startseite</a>
-    <button class="theme-btn" data-theme-toggle aria-label="Theme wechseln">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
-  </div>
-</nav>
-<main id="main-content">
-  <div class="page-wrapper">
-    <header class="page-header">
-      <div class="badge">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Datenschutz
+
+<header class="nav" role="banner">
+  <div class="container">
+    <nav class="nav__inner" aria-label="Hauptnavigation">
+      <a href="./index.html" class="nav__logo" aria-label="Zementa Weather – Startseite">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="8" fill="var(--color-primary)" opacity="0.15"/>
+          <path d="M14 6 C9.6 6 6 9.6 6 14 C6 18.4 9.6 22 14 22" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M14 22 C18.4 22 22 18.4 22 14" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="14" cy="14" r="3" fill="var(--color-primary)"/>
+          <path d="M14 10 L14 6 M18 14 L22 14 M14 18 L14 22 M10 14 L6 14" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+        </svg>
+        Zementa Weather
+      </a>
+      <div class="nav__actions">
+        <button class="btn-icon" data-theme-toggle aria-label="Theme wechseln">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <a href="./index.html" class="btn btn--ghost">← Zurück</a>
+        <a href="https://play.google.com/store/apps/details?id=com.qwellcode.weather_app" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.77a2 2 0 0 0 2.73.73l11.09-6.4-2.86-2.87-11 8.54zM20.9 10.59l-3.14-1.81-3.18 3.19 3.18 3.18 3.17-1.83a2 2 0 0 0 0-2.73zM1.05 1.4A2 2 0 0 0 1 2v20a2 2 0 0 0 .05.6l.09.09 11.2-11.2v-.27L1.14 1.31l-.09.09zM5.91.5 16.97 6.9l-2.86 2.87L2.91 1.23A2 2 0 0 1 5.91.5z"/></svg>
+          Play Store
+        </a>
       </div>
-      <h1>Datenschutzerklärung</h1>
-      <p class="meta">Zementa Weather &nbsp;·&nbsp; Stand: 6. Juni 2026 &nbsp;·&nbsp; Entwickler: QW_ellCODe</p>
-    </header>
-    <div class="highlight-box green">
-      <strong>✓ Keine Datenerhebung durch den Entwickler.</strong><br>
-      Alle von der App gespeicherten Daten verbleiben ausschließlich lokal auf Ihrem Gerät. Es werden keinerlei personenbezogene Daten an den Entwickler übertragen oder durch diesen eingesehen.
-    </div>
-    <nav class="toc-card" aria-label="Inhaltsverzeichnis">
-      <p class="toc-title">Inhaltsverzeichnis</p>
-      <ul class="toc-list" role="list">
-        <li><a href="#s1">Verantwortlicher</a></li>
-        <li><a href="#s2">Grundsatz: Nur lokale Daten</a></li>
-        <li><a href="#s3">Erhobene Daten</a></li>
-        <li><a href="#s4">Zweck der Verarbeitung</a></li>
-        <li><a href="#s5">Externe Dienste</a></li>
-        <li><a href="#s6">Datenweitergabe</a></li>
-        <li><a href="#s7">Speicherdauer</a></li>
-        <li><a href="#s8">Nutzerrechte (DSGVO)</a></li>
-        <li><a href="#s9">Kinder</a></li>
-        <li><a href="#s10">Datensicherheit</a></li>
-        <li><a href="#s11">Änderungen</a></li>
-        <li><a href="#s12">Kontakt</a></li>
-      </ul>
     </nav>
-    <section id="s1">
-      <h2><span class="section-num" aria-hidden="true">1</span>Verantwortlicher</h2>
-      <p>Verantwortlich für die Datenverarbeitung in der App <strong>Zementa Weather</strong> im Sinne der DSGVO ist:</p>
-      <div class="highlight-box"><strong>QW_ellCODe</strong><br>E-Mail: <a href="mailto:qwellcode.codes@gmail.com">qwellcode.codes@gmail.com</a><br>Website: <a href="https://zementa.qw-ellcode.de" target="_blank" rel="noopener noreferrer">zementa.qw-ellcode.de</a></div>
-    </section>
-    <section id="s2">
-      <h2><span class="section-num" aria-hidden="true">2</span>Grundsatz: Ausschließlich lokale Datenspeicherung</h2>
-      <p>Zementa Weather ist so konzipiert, dass <strong>alle Daten ausschließlich lokal auf dem Gerät des Nutzers gespeichert</strong> werden. Es findet <strong>keinerlei Übertragung von Nutzerdaten an den Entwickler</strong> statt. Der Entwickler hat zu keinem Zeitpunkt Zugriff auf Daten der Nutzer.</p>
-      <p>Es ist <strong>keine Registrierung, kein Benutzerkonto und keine Anmeldung</strong> erforderlich, um die App zu nutzen.</p>
-      <p><strong>Hinweis zu Firebase:</strong> Firebase wird von Zementa Weather <strong>nicht aktiv verwendet</strong> – es findet keine Verbindung zu Firebase-Servern statt, keine Authentifizierung, keine Datenbanknutzung und kein Analytics.</p>
-    </section>
-    <section id="s3">
-      <h2><span class="section-num" aria-hidden="true">3</span>Lokal verarbeitete Daten</h2>
-      <table class="info-table">
-        <thead><tr><th>Datenkategorie</th><th>Details</th><th>Speicherort</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Standortdaten (GPS)</strong></td><td>Koordinaten für lokale Wettervorhersage – nur bei aktiver Einwilligung</td><td>Nur im Arbeitsspeicher (flüchtig)</td></tr>
-          <tr><td><strong>Gespeicherte Orte</strong></td><td>Manuell hinzugefügte Städte</td><td>Lokal (SQLite)</td></tr>
-          <tr><td><strong>App-Einstellungen</strong></td><td>Temperatureinheit, Theme, Darstellungsoptionen</td><td>Lokal (SharedPreferences)</td></tr>
-          <tr><td><strong>Zwischengespeicherte Wetterdaten</strong></td><td>Zuletzt geladene Daten zur Offline-Darstellung</td><td>Lokal (SQLite)</td></tr>
-        </tbody>
-      </table>
-    </section>
-    <section id="s4">
-      <h2><span class="section-num" aria-hidden="true">4</span>Zweck der Datenverarbeitung</h2>
-      <ul>
-        <li><strong>Standortdaten:</strong> Einmalige Übermittlung an Open-Meteo API für aktuelle Wettervorhersage</li>
-        <li><strong>Gespeicherte Orte:</strong> Anzeige von Wetterdaten für gewählte Orte</li>
-        <li><strong>App-Einstellungen:</strong> Personalisierung der Oberfläche</li>
-        <li><strong>Zwischengespeicherte Daten:</strong> Offline-Darstellung</li>
-      </ul>
-      <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) für Standortdaten, Art. 6 Abs. 1 lit. b DSGVO für übrige Daten.</p>
-    </section>
-    <section id="s5">
-      <h2><span class="section-num" aria-hidden="true">5</span>Externe Dienste (Wetter-APIs)</h2>
-      <table class="info-table">
-        <thead><tr><th>Dienst</th><th>Zweck</th><th>Übermittelte Daten</th><th>Datenschutz</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Open-Meteo</strong></td><td>Wettervorhersage</td><td>GPS-Koordinaten oder Ortsname</td><td><a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">open-meteo.com/en/terms</a></td></tr>
-          <tr><td><strong>Nominatim / OSM</strong></td><td>Reverse-Geocoding</td><td>GPS-Koordinaten</td><td><a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">osmfoundation.org Privacy Policy</a></td></tr>
-          <tr><td><strong>Open-Meteo Geocoding</strong></td><td>Ortsuche nach Name</td><td>Eingegebener Suchbegriff</td><td><a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">open-meteo.com/en/terms</a></td></tr>
-        </tbody>
-      </table>
-    </section>
-    <section id="s6">
-      <h2><span class="section-num" aria-hidden="true">6</span>Datenweitergabe an Dritte</h2>
-      <p>Personenbezogene Daten werden <strong>weder an den Entwickler noch an Dritte zu Werbe-, Analyse- oder kommerziellen Zwecken weitergegeben</strong>. Es werden keine Nutzungsprofile erstellt, kein Tracking durchgeführt, keine Analyse- oder Werbedienste eingesetzt.</p>
-    </section>
-    <section id="s7">
-      <h2><span class="section-num" aria-hidden="true">7</span>Speicherdauer</h2>
-      <table class="info-table">
-        <thead><tr><th>Datenkategorie</th><th>Speicherdauer</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Standortdaten (GPS)</strong></td><td>Nicht gespeichert – nur für die Dauer der API-Anfrage</td></tr>
-          <tr><td><strong>Gespeicherte Orte</strong></td><td>Bis zur manuellen Löschung durch den Nutzer</td></tr>
-          <tr><td><strong>App-Einstellungen</strong></td><td>Bis zur Zurücksetzung oder Deinstallation</td></tr>
-          <tr><td><strong>Zwischengespeicherte Wetterdaten</strong></td><td>Bis zur nächsten Aktualisierung oder Deinstallation</td></tr>
-        </tbody>
-      </table>
-    </section>
-    <section id="s8">
-      <h2><span class="section-num" aria-hidden="true">8</span>Rechte der Nutzer (DSGVO)</h2>
-      <ul>
-        <li><strong>Recht auf Auskunft</strong> (Art. 15 DSGVO)</li>
-        <li><strong>Recht auf Berichtigung</strong> (Art. 16 DSGVO)</li>
-        <li><strong>Recht auf Löschung</strong> (Art. 17 DSGVO) – lokal durch App-Einstellungen oder Deinstallation</li>
-        <li><strong>Recht auf Einschränkung</strong> (Art. 18 DSGVO)</li>
-        <li><strong>Recht auf Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
-        <li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO)</li>
-        <li><strong>Widerruf der Einwilligung</strong> (Art. 7 Abs. 3 DSGVO) – Standortfreigabe jederzeit in Geräteeinstellungen widerrufbar</li>
-      </ul>
-      <p>Kontakt: <a href="mailto:qwellcode.codes@gmail.com">qwellcode.codes@gmail.com</a></p>
-    </section>
-    <section id="s9">
-      <h2><span class="section-num" aria-hidden="true">9</span>Kinder und Jugendliche</h2>
-      <p>Zementa Weather erhebt keine Nutzerdaten. Standortdaten werden nur bei expliziter Einwilligung genutzt, die bei Minderjährigen durch Erziehungsberechtigte erteilt werden sollte.</p>
-    </section>
-    <section id="s10">
-      <h2><span class="section-num" aria-hidden="true">10</span>Datensicherheit</h2>
-      <ul>
-        <li>Alle Netzwerkkommunikation erfolgt verschlüsselt über <strong>HTTPS/TLS</strong></li>
-        <li>Lokale Daten sind durch die Android-App-Sandbox geschützt</li>
-        <li>Standortdaten werden nach dem API-Abruf unmittelbar verworfen</li>
-        <li>Keine Passwörter oder Authentifizierungsdaten werden verarbeitet</li>
-      </ul>
-    </section>
-    <section id="s11">
-      <h2><span class="section-num" aria-hidden="true">11</span>Änderungen dieser Erklärung</h2>
-      <p>Bei Änderungen wird das Datum oben aktualisiert. Die jeweils aktuelle Version ist unter <a href="https://zementa.qw-ellcode.de/datenschutz.html" target="_blank" rel="noopener noreferrer">zementa.qw-ellcode.de/datenschutz.html</a> abrufbar.</p>
-    </section>
-    <section id="s12">
-      <h2><span class="section-num" aria-hidden="true">12</span>Kontakt</h2>
-      <div class="highlight-box">
-        <strong>QW_ellCODe</strong><br>
-        E-Mail: <a href="mailto:qwellcode.codes@gmail.com">qwellcode.codes@gmail.com</a><br><br>
-        Zuständige Aufsichtsbehörde:<br>
-        <a href="https://www.bfdi.bund.de" target="_blank" rel="noopener noreferrer">Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI)</a>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="page-header" aria-labelledby="page-title">
+    <div class="container">
+      <div class="page-header__eyebrow"><span aria-hidden="true"></span>Rechtliches</div>
+      <h1 class="page-header__title" id="page-title">Datenschutzerklärung</h1>
+      <p class="page-header__meta">Zementa Weather · Stand: Januar 2025 · Version 5</p>
+      <div class="page-header__badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        ✓ Keine Datenerhebung durch den Entwickler
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="content__inner">
+        <div class="prose">
+
+          <div class="prose-section">
+            <h2>Verantwortlicher</h2>
+            <p>Verantwortlich für die Datenverarbeitung in der App <strong>Zementa Weather</strong> im Sinne der DSGVO ist:</p>
+            <p><strong>QW_ellCODe</strong><br>
+            E-Mail: <a href="mailto:qwellcode.codes@gmail.com">qwellcode.codes@gmail.com</a><br>
+            Website: <a href="https://zementa.qw-ellcode.de" target="_blank" rel="noopener noreferrer">zementa.qw-ellcode.de</a></p>
+          </div>
+
+          <div class="prose-section">
+            <h2>Grundsatz: Ausschließlich lokale Datenspeicherung</h2>
+            <p>Zementa Weather ist so konzipiert, dass <strong>alle Daten ausschließlich lokal auf dem Gerät des Nutzers gespeichert</strong> werden. Es findet <strong>keinerlei Übertragung von Nutzerdaten an den Entwickler</strong> statt. Der Entwickler hat zu keinem Zeitpunkt Zugriff auf Daten der Nutzer.</p>
+            <p>Es ist <strong>keine Registrierung, kein Benutzerkonto und keine Anmeldung</strong> erforderlich, um die App zu nutzen.</p>
+            <p><strong>Hinweis zu Firebase:</strong> Firebase wird von Zementa Weather <strong>nicht aktiv verwendet</strong> – es findet keine Verbindung zu Firebase-Servern statt, keine Authentifizierung, keine Datenbanknutzung und kein Analytics.</p>
+          </div>
+
+          <div class="prose-section">
+            <h2>Lokal verarbeitete Daten</h2>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Datenkategorie</th>
+                    <th>Details</th>
+                    <th>Speicherort</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Standortdaten (GPS)</strong></td><td>Koordinaten für lokale Wettervorhersage – nur bei aktiver Einwilligung</td><td>Nur im Arbeitsspeicher (flüchtig)</td></tr>
+                  <tr><td><strong>Gespeicherte Orte</strong></td><td>Manuell hinzugefügte Städte</td><td>Lokal (SQLite)</td></tr>
+                  <tr><td><strong>App-Einstellungen</strong></td><td>Temperatureinheit, Theme, Darstellungsoptionen</td><td>Lokal (SharedPreferences)</td></tr>
+                  <tr><td><strong>Zwischengespeicherte Wetterdaten</strong></td><td>Zuletzt geladene Daten zur Offline-Darstellung</td><td>Lokal (SQLite)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="prose-section">
+            <h2>Zweck der Datenverarbeitung</h2>
+            <ul>
+              <li><strong>Standortdaten:</strong> Einmalige Übermittlung an Open-Meteo API für aktuelle Wettervorhersage</li>
+              <li><strong>Gespeicherte Orte:</strong> Anzeige von Wetterdaten für gewählte Orte</li>
+              <li><strong>App-Einstellungen:</strong> Personalisierung der Oberfläche</li>
+              <li><strong>Zwischengespeicherte Daten:</strong> Offline-Darstellung</li>
+            </ul>
+            <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) für Standortdaten, Art. 6 Abs. 1 lit. b DSGVO für übrige Daten.</p>
+          </div>
+
+          <div class="prose-section">
+            <h2>Externe Dienste (Wetter-APIs)</h2>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Dienst</th><th>Zweck</th><th>Übermittelte Daten</th><th>Datenschutz</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Open-Meteo</strong></td><td>Wettervorhersage</td><td>GPS-Koordinaten oder Ortsname</td><td><a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">open-meteo.com/en/terms</a></td></tr>
+                  <tr><td><strong>Nominatim / OSM</strong></td><td>Reverse-Geocoding</td><td>GPS-Koordinaten</td><td><a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">osmfoundation.org</a></td></tr>
+                  <tr><td><strong>Open-Meteo Geocoding</strong></td><td>Ortsuche nach Name</td><td>Eingegebener Suchbegriff</td><td><a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">open-meteo.com/en/terms</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="prose-section">
+            <h2>Datenweitergabe an Dritte</h2>
+            <p>Personenbezogene Daten werden <strong>weder an den Entwickler noch an Dritte zu Werbe-, Analyse- oder kommerziellen Zwecken weitergegeben</strong>. Es werden keine Nutzungsprofile erstellt, kein Tracking durchgeführt, keine Analyse- oder Werbedienste eingesetzt.</p>
+          </div>
+
+          <div class="prose-section">
+            <h2>Speicherdauer</h2>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Datenkategorie</th><th>Speicherdauer</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Standortdaten (GPS)</strong></td><td>Nicht gespeichert – nur für die Dauer der API-Anfrage</td></tr>
+                  <tr><td><strong>Gespeicherte Orte</strong></td><td>Bis zur manuellen Löschung durch den Nutzer</td></tr>
+                  <tr><td><strong>App-Einstellungen</strong></td><td>Bis zur Zurücksetzung oder Deinstallation</td></tr>
+                  <tr><td><strong>Zwischengespeicherte Wetterdaten</strong></td><td>Bis zur nächsten Aktualisierung oder Deinstallation</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="prose-section">
+            <h2>Rechte der Nutzer (DSGVO)</h2>
+            <ul>
+              <li><strong>Recht auf Auskunft</strong> (Art. 15 DSGVO)</li>
+              <li><strong>Recht auf Berichtigung</strong> (Art. 16 DSGVO)</li>
+              <li><strong>Recht auf Löschung</strong> (Art. 17 DSGVO) – lokal durch App-Einstellungen oder Deinstallation</li>
+              <li><strong>Recht auf Einschränkung</strong> (Art. 18 DSGVO)</li>
+              <li><strong>Recht auf Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+              <li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO)</li>
+              <li><strong>Widerruf der Einwilligung</strong> (Art. 7 Abs. 3 DSGVO) – Standortfreigabe jederzeit in Geräteeinstellungen widerrufbar</li>
+            </ul>
+            <p>Kontakt für Anfragen: <a href="mailto:qwellcode.codes@gmail.com">qwellcode.codes@gmail.com</a></p>
+          </div>
+
+          <div class="prose-section">
+            <h2>Kinder und Jugendliche</h2>
+            <p>Zementa Weather erhebt keine Nutzerdaten. Standortdaten werden nur bei expliziter Einwilligung genutzt, die bei Minderjährigen durch Erziehungsberechtigte erteilt werden sollte.</p>
+          </div>
+
+          <div class="prose-section">
+            <h2>Datensicherheit</h2>
+            <ul>
+              <li>Alle Netzwerkkommunikation erfolgt verschlüsselt über <strong>HTTPS/TLS</strong></li>
+              <li>Lokale Daten sind durch die Android-App-Sandbox geschützt</li>
+              <li>Standortdaten werden nach dem API-Abruf unmittelbar verworfen</li>
+              <li>Keine Passwörter oder Authentifizierungsdaten werden verarbeitet</li>
+            </ul>
+          </div>
+
+          <div class="prose-section">
+            <h2>Änderungen dieser Erklärung</h2>
+            <p>Bei Änderungen wird das Datum oben aktualisiert. Die jeweils aktuelle Version ist unter <a href="https://zementa.qw-ellcode.de/datenschutz.html" target="_blank" rel="noopener noreferrer">zementa.qw-ellcode.de/datenschutz.html</a> abrufbar.</p>
+          </div>
+
+          <div class="prose-section">
+            <h2>Kontakt &amp; Aufsichtsbehörde</h2>
+            <p><strong>QW_ellCODe</strong><br>
+            E-Mail: <a href="mailto:qwellcode.codes@gmail.com">qwellcode.codes@gmail.com</a></p>
+            <p>Zuständige Aufsichtsbehörde:<br>
+            Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI)</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer>
-  <div class="footer-links">
-    <a href="index.html">Startseite</a>
-    <a href="datenschutz.html">Datenschutzerklärung</a>
-    <a href="privacy.html">Privacy Policy (EN)</a>
-    <a href="mailto:qwellcode.codes@gmail.com">Kontakt</a>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <svg width="20" height="20" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="8" fill="var(--color-primary)" opacity="0.15"/>
+          <path d="M14 6 C9.6 6 6 9.6 6 14 C6 18.4 9.6 22 14 22" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="14" cy="14" r="2" fill="var(--color-primary)"/>
+        </svg>
+        Zementa Weather
+      </div>
+      <nav class="footer__links" aria-label="Footer Navigation">
+        <a href="https://github.com/QWellCOD/weather_app" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:qwellcode.codes@gmail.com">Kontakt</a>
+        <a href="https://qw-ellcode.de" target="_blank" rel="noopener noreferrer">qw-ellcode.de</a>
+      </nav>
+    </div>
+    <p class="footer__copy">© 2026 QW_ellCODe · qwellcode.codes@gmail.com · Alle Rechte vorbehalten.</p>
   </div>
-  <p>© 2026 QW_ellCODe · Zementa Weather</p>
 </footer>
+
 <script>
 (function(){
-  const t = document.querySelector('[data-theme-toggle]');
-  const r = document.documentElement;
-  let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
-  r.setAttribute('data-theme', d);
-  if(t) t.addEventListener('click', () => {
-    d = d === 'dark' ? 'light' : 'dark';
-    r.setAttribute('data-theme', d);
-    t.innerHTML = d === 'dark'
-      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
-      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
-  });
+  const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
+  let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  r.setAttribute('data-theme',d);
+  if(t){
+    const sun='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+    const moon='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    t.innerHTML=d==='dark'?sun:moon;
+    t.addEventListener('click',()=>{
+      d=d==='dark'?'light':'dark';
+      r.setAttribute('data-theme',d);
+      t.setAttribute('aria-label','Zu '+(d==='dark'?'Hell':'Dunkel')+'modus wechseln');
+      t.innerHTML=d==='dark'?sun:moon;
+    });
+  }
 })();
 </script>
 </body>

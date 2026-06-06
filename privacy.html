@@ -1,1 +1,274 @@
-PRIVACY_CONTENT
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – Zementa Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-border: #d4d1ca;
+      --color-text: #28251d; --color-text-muted: #7a7974; --color-text-faint: #bab9b4;
+      --color-primary: #01696f; --color-primary-hover: #0c4e54;
+      --color-divider: #dcd9d5;
+      --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06);
+      --shadow-md: 0 4px 12px oklch(0.2 0.01 80 / 0.08);
+      --radius-md: 0.5rem; --radius-lg: 0.75rem;
+      --font-body: 'Inter', sans-serif;
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+      --space-6: 1.5rem; --space-8: 2rem; --space-12: 3rem;
+      --space-16: 4rem; --space-20: 5rem;
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    [data-theme="dark"] {
+      --color-bg: #171614; --color-surface: #1c1b19; --color-border: #393836;
+      --color-text: #cdccca; --color-text-muted: #797876; --color-text-faint: #5a5957;
+      --color-primary: #4f98a3; --color-primary-hover: #227f8b;
+      --color-divider: #262523;
+      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
+      --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background: var(--color-bg); line-height: 1.7; min-height: 100dvh; }
+    a { color: var(--color-primary); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--color-primary-hover); }
+    p, li { max-width: 72ch; }
+    nav { position: sticky; top: 0; z-index: 100; background: color-mix(in oklch, var(--color-bg) 85%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-divider); padding: var(--space-3) var(--space-6); display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); font-weight: 600; color: var(--color-text); text-decoration: none; }
+    .nav-logo svg { color: var(--color-primary); }
+    .nav-actions { display: flex; align-items: center; gap: var(--space-3); }
+    .nav-back { font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: all var(--transition); }
+    .nav-back:hover { color: var(--color-text); border-color: var(--color-primary); }
+    .lang-btn { font-size: var(--text-xs); color: var(--color-text-muted); padding: var(--space-2) var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: all var(--transition); }
+    .lang-btn:hover { color: var(--color-text); border-color: var(--color-primary); }
+    .theme-btn { width: 36px; height: 36px; border-radius: var(--radius-md); border: 1px solid var(--color-border); background: transparent; cursor: pointer; color: var(--color-text-muted); display: flex; align-items: center; justify-content: center; transition: all var(--transition); }
+    .theme-btn:hover { color: var(--color-text); border-color: var(--color-primary); }
+    .page-wrapper { max-width: 800px; margin: 0 auto; padding: var(--space-12) var(--space-6) var(--space-20); }
+    .page-header { margin-bottom: var(--space-12); }
+    .badge { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--text-xs); font-weight: 500; color: var(--color-primary); background: color-mix(in oklch, var(--color-primary) 10%, var(--color-bg)); padding: 4px 10px; border-radius: 9999px; margin-bottom: var(--space-4); }
+    h1 { font-size: var(--text-xl); font-weight: 700; color: var(--color-text); line-height: 1.2; margin-bottom: var(--space-3); }
+    .meta { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .toc-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-8); box-shadow: var(--shadow-sm); }
+    .toc-title { font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-3); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .toc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+    .toc-list li a { font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: center; gap: 6px; }
+    .toc-list li a::before { content: "§"; color: var(--color-primary); font-weight: 700; }
+    .toc-list li a:hover { color: var(--color-primary); }
+    section { margin-bottom: var(--space-12); scroll-margin-top: 80px; }
+    section h2 { font-size: var(--text-lg); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-divider); display: flex; align-items: center; gap: var(--space-3); }
+    .section-num { width: 24px; height: 24px; border-radius: 50%; background: color-mix(in oklch, var(--color-primary) 12%, var(--color-bg)); color: var(--color-primary); font-size: var(--text-xs); font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    section p { margin-bottom: var(--space-4); color: var(--color-text); }
+    section ul, section ol { margin: var(--space-2) 0 var(--space-4) var(--space-6); }
+    section li { margin-bottom: var(--space-2); }
+    .info-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: var(--text-sm); }
+    .info-table th, .info-table td { text-align: left; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-divider); }
+    .info-table th { color: var(--color-text-muted); font-weight: 500; background: var(--color-surface); }
+    .info-table td { color: var(--color-text); }
+    .info-table tr:last-child td { border-bottom: none; }
+    .highlight-box { background: color-mix(in oklch, var(--color-primary) 6%, var(--color-surface)); border: 1px solid color-mix(in oklch, var(--color-primary) 20%, var(--color-border)); border-radius: var(--radius-md); padding: var(--space-4) var(--space-6); margin: var(--space-4) 0; font-size: var(--text-sm); }
+    .highlight-box.green { background: color-mix(in oklch, #437a22 8%, var(--color-surface)); border-color: color-mix(in oklch, #437a22 25%, var(--color-border)); }
+    .highlight-box.green strong { color: #437a22; }
+    [data-theme="dark"] .highlight-box.green strong { color: #6daa45; }
+    footer { text-align: center; padding: var(--space-8); border-top: 1px solid var(--color-divider); color: var(--color-text-faint); font-size: var(--text-xs); }
+    footer a { color: var(--color-text-muted); }
+    footer a:hover { color: var(--color-primary); }
+    .footer-links { display: flex; justify-content: center; gap: var(--space-6); flex-wrap: wrap; margin-bottom: var(--space-3); }
+    @media (max-width: 600px) { .toc-list { grid-template-columns: 1fr; } .page-wrapper { padding: var(--space-8) var(--space-4) var(--space-16); } }
+    .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0; }
+  </style>
+</head>
+<body>
+<a href="#main-content" class="sr-only">Skip to main content</a>
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Zementa Weather – Home">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+    </svg>
+    Zementa Weather
+  </a>
+  <div class="nav-actions">
+    <a href="datenschutz.html" class="lang-btn" title="Zur deutschen Version">🇩🇪 DE</a>
+    <a href="index.html" class="nav-back">← Home</a>
+    <button class="theme-btn" data-theme-toggle aria-label="Toggle theme">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</nav>
+<main id="main-content">
+  <div class="page-wrapper">
+    <header class="page-header">
+      <div class="badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Privacy
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Zementa Weather &nbsp;·&nbsp; Last updated: June 6, 2026 &nbsp;·&nbsp; Developer: QW_ellCODe</p>
+    </header>
+    <div class="highlight-box green">
+      <strong>✓ No data collection by the developer.</strong><br>
+      All data stored by the app remains exclusively on your device. No personal data is transmitted to or accessed by the developer at any time.
+    </div>
+    <nav class="toc-card" aria-label="Table of Contents">
+      <p class="toc-title">Table of Contents</p>
+      <ul class="toc-list" role="list">
+        <li><a href="#s1">Controller / Data Responsible</a></li>
+        <li><a href="#s2">Principle: Local Data Only</a></li>
+        <li><a href="#s3">Data Collected</a></li>
+        <li><a href="#s4">Purpose of Processing</a></li>
+        <li><a href="#s5">Third-Party Services</a></li>
+        <li><a href="#s6">Data Sharing</a></li>
+        <li><a href="#s7">Retention Period</a></li>
+        <li><a href="#s8">Your Rights (GDPR)</a></li>
+        <li><a href="#s9">Children</a></li>
+        <li><a href="#s10">Data Security</a></li>
+        <li><a href="#s11">Changes</a></li>
+        <li><a href="#s12">Contact</a></li>
+      </ul>
+    </nav>
+    <section id="s1">
+      <h2><span class="section-num" aria-hidden="true">1</span>Controller / Data Responsible</h2>
+      <p>The entity responsible for data processing within the app <strong>Zementa Weather</strong> under the GDPR is:</p>
+      <div class="highlight-box"><strong>QW_ellCODe</strong><br>Email: <a href="mailto:qwellcode.codes@gmail.com">qwellcode.codes@gmail.com</a><br>Website: <a href="https://zementa.qw-ellcode.de" target="_blank" rel="noopener noreferrer">zementa.qw-ellcode.de</a></div>
+    </section>
+    <section id="s2">
+      <h2><span class="section-num" aria-hidden="true">2</span>Principle: Local Data Storage Only</h2>
+      <p>Zementa Weather is designed so that <strong>all data is stored exclusively on the user's device</strong>. There is <strong>no transfer of user data to the developer</strong> at any point. The developer has no access — neither read nor write — to any user data. No server-side data collection is technically implemented.</p>
+      <p><strong>No registration, user account, or login</strong> is required to use the app. The app works fully anonymously.</p>
+      <p><strong>Note on Firebase:</strong> Firebase is <strong>not actively used</strong> by Zementa Weather. No connection to Firebase servers takes place — no authentication, no database usage, no analytics. Inactive code remnants from an earlier development phase may exist but are functionally disabled.</p>
+    </section>
+    <section id="s3">
+      <h2><span class="section-num" aria-hidden="true">3</span>Data Processed Locally</h2>
+      <p>The app processes only the following data, all of which remains on the user's device:</p>
+      <table class="info-table">
+        <thead><tr><th>Data Category</th><th>Details</th><th>Storage Location</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Location Data (GPS)</strong></td><td>Geographic coordinates for local weather forecast — only when the user explicitly grants location permission. Coordinates are used solely for the immediate API request and not stored afterwards.</td><td>RAM only (volatile)</td></tr>
+          <tr><td><strong>Saved Locations</strong></td><td>Cities manually added by the user</td><td>Local device (SQLite database)</td></tr>
+          <tr><td><strong>App Settings</strong></td><td>Temperature unit (°C/°F), theme preference (light/dark), display options</td><td>Local device (SharedPreferences)</td></tr>
+          <tr><td><strong>Cached Weather Data</strong></td><td>Last loaded weather data for offline display</td><td>Local device (SQLite database)</td></tr>
+        </tbody>
+      </table>
+      <p>No email addresses, passwords, payment data, biometric data, or personal identifiers are collected or processed.</p>
+    </section>
+    <section id="s4">
+      <h2><span class="section-num" aria-hidden="true">4</span>Purpose of Processing</h2>
+      <ul>
+        <li><strong>Location data:</strong> Single transmission to the Open-Meteo API to retrieve the current weather forecast for the user's location</li>
+        <li><strong>Saved locations:</strong> Display weather data for user-selected places within the app</li>
+        <li><strong>App settings:</strong> Personalise the app interface according to user preferences</li>
+        <li><strong>Cached weather data:</strong> Show last loaded data when offline</li>
+      </ul>
+      <p>Legal basis: Art. 6(1)(a) GDPR (consent) for location data; Art. 6(1)(b) GDPR (performance of contract / provision of app functionality) for all other data.</p>
+    </section>
+    <section id="s5">
+      <h2><span class="section-num" aria-hidden="true">5</span>Third-Party Services (Weather APIs)</h2>
+      <p>To retrieve weather data, the app communicates with the following external services. The data necessary for each request (GPS coordinates or place name) is transmitted to these services, which process it according to their own privacy policies:</p>
+      <table class="info-table">
+        <thead><tr><th>Service</th><th>Purpose</th><th>Data Transmitted</th><th>Privacy Policy</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Open-Meteo</strong><br><small style="color:var(--color-text-muted)">open-meteo.com</small></td><td>Weather forecast</td><td>GPS coordinates or place name</td><td><a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">open-meteo.com/en/terms</a></td></tr>
+          <tr><td><strong>Nominatim / OpenStreetMap</strong><br><small style="color:var(--color-text-muted)">OSM Foundation</small></td><td>Reverse geocoding: GPS → city name</td><td>GPS coordinates</td><td><a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">osmfoundation.org Privacy Policy</a></td></tr>
+          <tr><td><strong>Open-Meteo Geocoding API</strong><br><small style="color:var(--color-text-muted)">open-meteo.com</small></td><td>Place search by name</td><td>Search term entered by user</td><td><a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">open-meteo.com/en/terms</a></td></tr>
+        </tbody>
+      </table>
+      <p>These external services are independent third parties. The developer of Zementa Weather has no influence over their data processing. Open-Meteo is a free, open weather API without commercial data usage. The Nominatim API is operated by the OpenStreetMap project.</p>
+    </section>
+    <section id="s6">
+      <h2><span class="section-num" aria-hidden="true">6</span>Data Sharing</h2>
+      <p>Personal data is <strong>never shared with the developer or any third party for advertising, analytics, or commercial purposes</strong>. No user profiles are created. No tracking takes place. No analytics or advertising services are used.</p>
+      <p>The only technically necessary transmission occurs when GPS coordinates or a place name are sent to the weather APIs (Open-Meteo, Nominatim) on the user's initiative.</p>
+    </section>
+    <section id="s7">
+      <h2><span class="section-num" aria-hidden="true">7</span>Retention Period</h2>
+      <table class="info-table">
+        <thead><tr><th>Data Category</th><th>Retention Period</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Location Data (GPS)</strong></td><td>Not stored — held in RAM only for the duration of the API request</td></tr>
+          <tr><td><strong>Saved Locations</strong></td><td>Until manually deleted by the user within the app</td></tr>
+          <tr><td><strong>App Settings</strong></td><td>Until manually reset or app is uninstalled</td></tr>
+          <tr><td><strong>Cached Weather Data</strong></td><td>Until next refresh or app uninstallation</td></tr>
+        </tbody>
+      </table>
+      <p>Uninstalling the app permanently removes all locally stored data from the device.</p>
+    </section>
+    <section id="s8">
+      <h2><span class="section-num" aria-hidden="true">8</span>Your Rights (GDPR)</h2>
+      <p>As a data subject under the GDPR you have the following rights:</p>
+      <ul>
+        <li><strong>Right of access</strong> (Art. 15 GDPR)</li>
+        <li><strong>Right to rectification</strong> (Art. 16 GDPR)</li>
+        <li><strong>Right to erasure</strong> (Art. 17 GDPR) — since all data is stored locally, you can delete it at any time via the app settings or by uninstalling the app</li>
+        <li><strong>Right to restriction of processing</strong> (Art. 18 GDPR)</li>
+        <li><strong>Right to data portability</strong> (Art. 20 GDPR)</li>
+        <li><strong>Right to object</strong> (Art. 21 GDPR)</li>
+        <li><strong>Right to withdraw consent</strong> (Art. 7(3) GDPR) — location permission can be revoked at any time in your device settings</li>
+      </ul>
+      <div class="highlight-box green">
+        <strong>Note on data deletion:</strong><br>
+        Since the developer has no access to your data, you can delete all locally stored data yourself: saved locations via the app settings, all data by uninstalling the app.
+      </div>
+      <p>For further questions contact <a href="mailto:qwellcode.codes@gmail.com">qwellcode.codes@gmail.com</a>. You also have the right to lodge a complaint with the competent data protection supervisory authority.</p>
+    </section>
+    <section id="s9">
+      <h2><span class="section-num" aria-hidden="true">9</span>Children</h2>
+      <p>Zementa Weather is intended for a general audience and is not specifically directed at children under the age of 13. Since no user data is collected or transmitted to the developer, there is no particular risk for minor users. Location data is only used with explicit permission, which for minors should be granted by a parent or guardian.</p>
+    </section>
+    <section id="s10">
+      <h2><span class="section-num" aria-hidden="true">10</span>Data Security</h2>
+      <ul>
+        <li>All network communication with external APIs is encrypted via <strong>HTTPS/TLS</strong></li>
+        <li>Locally stored data is protected by the Android operating system's app sandbox</li>
+        <li>Location data is discarded immediately after the API request</li>
+        <li>No passwords, authentication tokens, or user accounts are processed — login is neither possible nor required</li>
+      </ul>
+    </section>
+    <section id="s11">
+      <h2><span class="section-num" aria-hidden="true">11</span>Changes to This Policy</h2>
+      <p>This privacy policy may be updated when the app changes or legal requirements evolve. The date of the last update is shown at the top of this page. For significant changes, users will be notified within the app. The current version is always available at <a href="https://zementa.qw-ellcode.de/privacy.html" target="_blank" rel="noopener noreferrer">zementa.qw-ellcode.de/privacy.html</a>.</p>
+    </section>
+    <section id="s12">
+      <h2><span class="section-num" aria-hidden="true">12</span>Contact</h2>
+      <div class="highlight-box">
+        For privacy-related questions:<br><br>
+        <strong>QW_ellCODe</strong><br>
+        Email: <a href="mailto:qwellcode.codes@gmail.com">qwellcode.codes@gmail.com</a><br><br>
+        Competent supervisory authority:<br>
+        <a href="https://www.bfdi.bund.de/EN" target="_blank" rel="noopener noreferrer">Federal Commissioner for Data Protection and Freedom of Information (BfDI), Germany</a>
+      </div>
+    </section>
+  </div>
+</main>
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="datenschutz.html">Datenschutzerklärung (DE)</a>
+    <a href="mailto:qwellcode.codes@gmail.com">Contact</a>
+  </div>
+  <p>© 2026 QW_ellCODe · Zementa Weather</p>
+</footer>
+<script>
+(function(){
+  const t = document.querySelector('[data-theme-toggle]');
+  const r = document.documentElement;
+  let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+  r.setAttribute('data-theme', d);
+  if(t) t.addEventListener('click', () => {
+    d = d === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', d);
+    t.innerHTML = d === 'dark'
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+  });
+})();
+</script>
+</body>
+</html>
